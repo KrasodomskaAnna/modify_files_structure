@@ -1,0 +1,43 @@
+﻿<Window x:Class="lab_2.CreatorDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_2"
+        mc:Ignorable="d"
+        Title="CreatorDialog" Height="250" Width="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <Label>Name:</Label>
+                <TextBox Name="name" MinWidth="180" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Name="infoErr" HorizontalAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <RadioButton Content="File" Name="file_t" Width="70px"/>
+            <RadioButton Content="Directory" Name="directory_t" Width="70px"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <CheckBox Name="readOnly" Content="Read Only" Height="20px"/>
+            <CheckBox Name="archive" Content="Archive" Height="20px"/>
+            <CheckBox Name="hidden" Content="Hidden" Height="20px"/>
+            <CheckBox Name="system" Content="System" Height="20px"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button Click="OnOkClick" Width="60px" Margin="4px">Ok</Button>
+            <Button Click="OnCancelClick" Width="60px" Margin="4px">Cancel</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

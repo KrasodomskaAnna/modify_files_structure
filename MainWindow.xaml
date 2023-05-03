@@ -1,0 +1,55 @@
+﻿<Window x:Class="lab_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="25px"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25px"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <ToolBar Grid.Row="0">
+                    <Menu>
+                        <MenuItem Header="_File">
+                            <MenuItem Header="_Open" Click="OnOpenClick"/>
+                            <MenuItem Header="_Exit" Click="OnExitClick"/>
+                        </MenuItem>
+                    </Menu>
+                </ToolBar>
+
+                <TreeView Grid.Row="1" Name="treeview" MouseLeftButtonUp="ShowRAHSInfo" Margin="13">
+                </TreeView>
+
+            </Grid>
+
+            <ScrollViewer Margin="10px" Grid.Column="1">
+                <TextBlock Name="fileContentBox" TextWrapping="Wrap" Margin="0,0,10px,0" Height="350" Width="450"></TextBlock>
+            </ScrollViewer>
+
+        </Grid>
+
+        <StatusBar Grid.Row="1">
+            <StatusBarItem>
+                <TextBlock Name="rahsInfo"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+        
+    </Grid>
+</Window>
